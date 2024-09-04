@@ -17,7 +17,7 @@ const Contacts =()=>{
 
 
     const columns = [
-        {field: "id" , headerName: "ID" , flex: 0.5},
+        {field: "id" , headerName: "ID" , flex: 1},
         {field: "registrarId" , headerName: "registrarID"},
         {field: "name" , headerName: "Name", flex: 1, cellClassName: "name-column--cell"},
         {field: "age" , headerName: "Age", Type: "number", headerAlign: "left", align: "left" },
