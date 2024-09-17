@@ -210,7 +210,6 @@ const Sidebar=()=>{
             </Menu>
           </ProSidebar>
         </Box>
-    )
-       
+    )     
 };
 export default Sidebar;
