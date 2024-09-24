@@ -5,15 +5,15 @@ import useMediaQuery  from "@mui/material/useMediaQuery";
 import Header from '../../components/Header';
 
 const initailValue ={
-    firstName : "",
+    firstName : " ",
     lastName : "",
     email : "",
     contact : "",
     address1 : "",
     address2 : "",
 }
-
 const phoneRegExp = /^((\+[1-9]{1,4}[-]?)|(\([0-9]{2,3}\)[-]?)|([0-9]{2,4})[-]?)*?[0-9]{3,4}[-]?[0-9]{3,4}$/;
+
 const userSchema = yup.object().shape({
     firstName : yup.string().required("required"),
     lastName : yup.string().required("required"),
@@ -32,13 +32,14 @@ const Form = () =>{
         console.log(value);
     }
     return (
-        <Box m="20px">
+        <Box m="20px" >
             <Header title="CREATE USER" subtitle="Create new user profile"/>
 
             <Formik
                 onSubmit={handleFormSubmit}
-                initailValue={initailValue}
-                validationSchema={userSchema} 
+                initialValues={initailValue}
+                validationSchema={userSchema}
+             
             >
 
             {({ values, errors, touched , handleblur, handleChange, handleSubmit})=>(
@@ -49,10 +50,11 @@ const Form = () =>{
                         "& > div" :{
                             gridColumn: isNonMobile ? undefined : "span 4"
                         },
+                        
                     }}>
                         < TextField
                         fullWidth
-                        Varient = "filled"
+                        varient = "filled"
                         type="text"
                         label="FirstName"
                         onBlur={handleblur}
@@ -61,77 +63,78 @@ const Form = () =>{
                         name="firstName"
                         error={!!touched.firstName && !!errors.firstName}
                         helperText={touched.firstName && errors.firstName}
-                        sx={{gridColumn : "span 2"}}
+                        
+                        sx={{gridColumn : "span 2", mb:"20px"}}
                         />
 
                         < TextField
                         fullWidth
-                        Varient = "filled"
+                        varient = "filled"
                         type="text"
                         label="LastName"
                         onBlur={handleblur}
                         onChange={handleChange}
                         value={values.lastName}
-                        name="lasttName"
-                        error={!!touched.firstName && !!errors.firstName}
-                        helperText={touched.firstName && errors.firstName}
-                        sx={{gridColumn : "span 2"}}
+                        name="lastName"
+                        error={!!touched.lastName && !!errors.lastName}
+                        helperText={touched.lastName && errors.lastName}
+                        sx={{gridColumn : "span 2" , mb:"20px"}}
                         />
 
                         < TextField
                         fullWidth
-                        Varient = "filled"
+                        variant = "filled"
                         type="text"
                         label="Email"
                         onBlur={handleblur}
                         onChange={handleChange}
                         value={values.email}
                         name="email"
-                        error={!!touched.firstName && !!errors.firstName}
-                        helperText={touched.firstName && errors.firstName}
-                        sx={{gridColumn : "span 4"}}
+                        error={!!touched.email && !!errors.email}
+                        helperText={touched.email && errors.email}
+                        sx={{gridColumn : "span 4" , mb:"20px"}}
                         />
 
                         < TextField
                         fullWidth
-                        Varient = "filled"
+                        variant = "filled"
                         type="text"
                         label="Contact"
                         onBlur={handleblur}
                         onChange={handleChange}
                         value={values.contact}
                         name="contact"
-                        error={!!touched.firstName && !!errors.firstName}
-                        helperText={touched.firstName && errors.firstName}
-                        sx={{gridColumn : "span 4"}}
+                        error={!!touched.contact && !!errors.contact}
+                        helperText={touched.contact && errors.contact}
+                        sx={{gridColumn : "span 4", mb:"20px"}}
                         />
                         
                         < TextField
                         fullWidth
-                        Varient = "filled"
+                        varient = "filled"
                         type="text"
                         label="Address1"
                         onBlur={handleblur}
                         onChange={handleChange}
                         value={values.address1}
                         name="address1"
-                        error={!!touched.firstName && !!errors.firstName}
-                        helperText={touched.firstName && errors.firstName}
-                        sx={{gridColumn : "span 4"}}
+                        error={!!touched.address1 && !!errors.address1}
+                        helperText={touched.address1 && errors.address1}
+                        sx={{gridColumn : "span 4" , mb:"20px"}}
                         />
                         
                         < TextField
                         fullWidth
-                        Varient = "filled"
+                        arient = "filled"
                         type="text"
                         label="Address2"
                         onBlur={handleblur}
                         onChange={handleChange}
                         value={values.address2}
                         name="address2"
-                        error={!!touched.firstName && !!errors.firstName}
-                        helperText={touched.firstName && errors.firstName}
-                        sx={{gridColumn : "span 4"}}
+                        error={!!touched.address2 && !!errors.address2}
+                        helperText={touched.address2 && errors.address2}
+                        sx={{gridColumn : "span 4 " , mb:"20px"}}
                         />
                     </Box>
 
